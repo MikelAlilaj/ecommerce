@@ -1,11 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
-
-
-
-
-
+    <!-- content wrpper -->
     <div class="content_wrapper">
         <!--middle content wrapper-->
         <div class="middle_content_wrapper">
@@ -185,7 +180,4 @@
             </section>
         </div><!--/middle content wrapper-->
     </div><!--/ content wrapper -->
-
-
-
 @endsection
