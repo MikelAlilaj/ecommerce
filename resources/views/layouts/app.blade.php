@@ -58,9 +58,30 @@
                                 </ul>
                             </div>
                             <div class="top_bar_user">
-                                <div class="user_icon"><img src="images/user.svg" alt=""></div>
-                                <div><a href="{{route('register')}}">Register</a></div>
-                                <div><a href="{{route('login')}}">Sign in</a></div>
+
+                                @guest
+                                    <div><a href="{{route('login')}}"> <div class="user_icon"><img src="{{asset('frontend/images/user.svg')}}"
+                                                                                                   alt=""></div>Register/Login</a></div>
+                                @else
+
+
+                                    <ul class="standard_dropdown top_bar_dropdown">
+                                        <li>
+                      <a href="{{route('home')}}"> <div class="user_icon"><img src="{{asset('frontend/images/user.svg')}}" alt="">
+                          </div>Profile<i class="fas fa-chevron-down"></i></a>
+                                            <ul>
+                                                <li><a href="#">Wishlist</a></li>
+                                                <li><a href="#">Checkout</a></li>
+                                                <li><a href="#">Others</a></li>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+
+                                @endguest
+
+
+
                             </div>
                         </div>
                     </div>

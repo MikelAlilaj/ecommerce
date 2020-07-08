@@ -82,7 +82,7 @@
             <div class="registration_page center_container">
                 <div class="center_content">
                     <div class="logo">
-                        <img src="{{asset('panel/assets/images/logo.png')}}" alt="" class="img-fluid">
+                        <img src="{{asset('public/panel/assets/images/logo.png')}}" alt="" class="img-fluid">
                     </div>
                     <form action="{{route('register')}}" method="post">
                         @csrf
