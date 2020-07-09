@@ -142,3 +142,17 @@ Route::get('coupon/remove/', 'CartController@CouponRemove')->name('coupon.remove
 Route::get('/product/details/{id}/{product_name}', 'ProductController@ProductView');
 
 Route::post('/cart/product/add/{id}', 'ProductController@AddCart');
+
+//Blog Post Route
+Route::get('blog/post/', 'BlogController@blog')->name('blog.post');
+
+Route::get('language/english', 'BlogController@English')->name('language.english');
+Route::get('language/italian', 'BlogController@Italian')->name('language.italian');
+
+Route::get('blog/single/{id}', 'BlogController@BlogSingle');
+
+// Pyment Step
+Route::get('payment/page', 'CartController@PaymentPage')->name('payment.step');
+Route::post('user/payment/process/', 'PaymentController@Payment')->name('payment.process');
+
+Route::post('user/stripe/charge/', 'PaymentController@StripeCharge')->name('stripe.charge');
