@@ -160,3 +160,36 @@ Route::post('user/stripe/charge/', 'PaymentController@StripeCharge')->name('stri
 // Product details Page
 Route::get('products/{id}', 'ProductController@ProductsView');
 Route::get('allcategory/{id}', 'ProductController@CategoryView');
+
+
+
+// Admin Order Route
+
+Route::get('admin/pading/order', 'Admin\OrderController@NewOrder')->name('admin.neworder');
+Route::get('admin/view/order/{id}', 'Admin\OrderController@ViewOrder');
+
+Route::get('admin/payment/accept/{id}', 'Admin\OrderController@PaymentAccept');
+Route::get('admin/payment/cancel/{id}', 'Admin\OrderController@PaymentCancel');
+
+Route::get('admin/accept/payment', 'Admin\OrderController@AcceptPayment')->name('admin.accept.payment');
+
+Route::get('admin/cancel/order', 'Admin\OrderController@CancelOrder')->name('admin.cancel.order');
+
+Route::get('admin/process/payment', 'Admin\OrderController@ProcessPayment')->name('admin.process.payment');
+Route::get('admin/success/payment', 'Admin\OrderController@SuccessPayment')->name('admin.success.payment');
+
+Route::get('admin/delevery/process/{id}', 'Admin\OrderController@DeleveryProcess');
+Route::get('admin/delevery/done/{id}', 'Admin\OrderController@DeleveryDone');
+
+//User Order Route
+Route::get('user/view/order/{id}', 'UserOrderController@ViewOrder');
+Route::get('/home', 'UserOrderController@index')->name('home');
+
+
+/// SEO Setting Route
+Route::get('admin/seo', 'Admin\OrderController@seo')->name('admin.seo');
+Route::post('admin/seo/update', 'Admin\OrderController@UpdateSeo')->name('update.seo');
+
+
+//Order Tracking Route
+Route::post('order/tracking', 'Frontcontroller@OrderTracking')->name('order.tracking');

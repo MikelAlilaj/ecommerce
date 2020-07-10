@@ -41,6 +41,27 @@
                         <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="images/phone.png" alt=""></div>+00 000 000 0000</div>
                         <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="images/mail.png" alt=""></div><a href="mailto:fastsales@gmail.com">alilajmikel@gmail.com</a></div>
                         <div class="top_bar_content ml-auto">
+
+
+
+                            @guest
+
+                            @else
+                                <div class="top_bar_menu">
+                                    <ul class="standard_dropdown top_bar_dropdown">
+
+                                        <li>
+                                            <a href="" data-toggle="modal" data-target="#exampleModal">My Order Traking</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            @endguest
+
+
+
+
+
                             <div class="top_bar_menu">
                                 <ul class="standard_dropdown top_bar_dropdown">
 
@@ -148,7 +169,7 @@
 
                             <div class="wishlist_icon"><img src="{{ asset('frontend/images/heart.png')}}" alt=""></div>
                             <div class="wishlist_content">
-                                <div class="wishlist_text"><a href="#">Wishlist</a></div>
+                                <div class="wishlist_text"><a href="{{route('user.wishlist')}}">Wishlist</a></div>
                                 <div class="wishlist_count">{{ count($wishlist) }}</div>
                             </div>
                     </div>
@@ -281,6 +302,39 @@
         </div>
     </div>
 </div>
+
+
+
+<!--Order Traking Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Your Status Code</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="{{ route('order.tracking') }}">
+                    @csrf
+                    <div class="modal-body">
+                        <label> Status Code</label>
+                        <input type="text" name="code" required="" class="form-control" placeholder="Your Order Status Code">
+                    </div>
+
+                    <button class="btn btn-danger" type="submit">Track Now </button>
+
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
 
 <script src="{{asset('frontend/js/jquery-3.3.1.min.js')}}"></script>
 <script src="{{asset('frontend/styles/bootstrap4/popper.js')}}"></script>
