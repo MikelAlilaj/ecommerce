@@ -164,7 +164,7 @@
 
                                     <li><input type="radio" name="payment" value="paypal"><img src="{{ asset('frontend/images/paypal.png') }}" style="width: 100px; height: 60px;"> </li>
 
-                                    <li><input type="radio" name="payment" value="ideal"><img src="{{ asset('frontend/images/mollie.png') }}" style="width: 100px; height: 60px;"> </li>
+                                    <li><input type="radio" name="payment" value="oncash"><img src="{{ asset('frontend/images/delivery.png') }}" style="width: 100px; height: 60px;"> </li>
 
                                 </ul>
 

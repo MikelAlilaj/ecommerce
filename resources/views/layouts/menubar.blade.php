@@ -1,9 +1,8 @@
-<!-- Main Navigation -->
-@php
-use Illuminate\Support\Facades\DB;
-$category=DB::table('categories')->get();
-@endphp
 
+@php
+
+    $category = DB::table('categories')->get();
+@endphp
 
 <nav class="main_nav">
     <div class="container">
@@ -20,29 +19,29 @@ $category=DB::table('categories')->get();
                             <div class="cat_menu_text">categories</div>
                         </div>
 
-    <ul class="cat_menu">
+                        <ul class="cat_menu">
 
-        @foreach($category as $cat)
-            <li class="hassubs">
-                <a href="{{ url('allcategory/'.$cat->id) }}">{{ $cat->category_name }}<i class="fas fa-chevron-right"></i></a>
-                <ul>
+                            @foreach($category as $cat)
+                                <li class="hassubs">
+                                    <a href="{{ url('allcategory/'.$cat->id) }}">{{ $cat->category_name }}<i class="fas fa-chevron-right"></i></a>
+                                    <ul>
 
-                    @php
-                        $subcategory = DB::table('subcategories')->where('category_id',$cat->id)->get();
-                    @endphp
+                                        @php
+                                            $subcategory = DB::table('subcategories')->where('category_id',$cat->id)->get();
+                                        @endphp
 
-                    @foreach($subcategory as $row)
-                        <li class="hassubs">
-                            <a href="{{ url('products/'.$row->id) }}">{{ $row->subcategory_name }}<i class="fas fa-chevron-right"></i></a>
+                                        @foreach($subcategory as $row)
+                                            <li class="hassubs">
+                                                <a href="{{ url('products/'.$row->id) }}">{{ $row->subcategory_name }}<i class="fas fa-chevron-right"></i></a>
 
-                        </li>
-                    @endforeach
+                                            </li>
+                                        @endforeach
 
-                </ul>
-            </li>
-        @endforeach
+                                    </ul>
+                                </li>
+                            @endforeach
 
-    </ul>
+                        </ul>
                     </div>
 
                     <!-- Main Nav Menu -->
@@ -91,11 +90,12 @@ $category=DB::table('categories')->get();
                                     <li><a href="blog_single.html">Blog Post<i class="fas fa-chevron-down"></i></a></li>
                                     <li><a href="regular.html">Regular Post<i class="fas fa-chevron-down"></i></a></li>
                                     <li><a href="cart.html">Cart<i class="fas fa-chevron-down"></i></a></li>
-                                    <li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
+                                    <li><a href="{{ route('contact.page') }}">Contact<i class="fas fa-chevron-down"></i></a></li>
                                 </ul>
                             </li>
-            <li><a href="{{route('blog.post')}}">Blog<i class="fas fa-chevron-down"></i></a></li>
-                            <li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
+                            <li><a href="{{ route('blog.post') }}">Blog<i class="fas fa-chevron-down"></i></a></li>
+
+                            <li><a href="{{ route('contact.page') }}">Contact<i class="fas fa-chevron-down"></i></a></li>
                         </ul>
                     </div>
 
@@ -189,12 +189,12 @@ $category=DB::table('categories')->get();
                             </ul>
                         </li>
                         <li class="page_menu_item"><a href="blog.html">blog<i class="fa fa-angle-down"></i></a></li>
-                        <li class="page_menu_item"><a href="contact.html">contact<i class="fa fa-angle-down"></i></a></li>
+                        <li class="page_menu_item"><a href="{{ route('contact.page') }}">contact<i class="fa fa-angle-down"></i></a></li>
                     </ul>
 
                     <div class="menu_contact">
-                        <div class="menu_contact_item"><div class="menu_contact_icon"><img src="images/phone_white.png" alt=""></div>+38 068 005 3570</div>
-                        <div class="menu_contact_item"><div class="menu_contact_icon"><img src="images/mail_white.png" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a></div>
+                        <div class="menu_contact_item"><div class="menu_contact_icon"><img src="{{ asset('frontend/images/phone_white.png')}}" alt=""></div>+00 000 000 0000</div>
+                        <div class="menu_contact_item"><div class="menu_contact_icon"><img src="{{ asset('frontend/images/mail_white.png')}}" alt=""></div><a href="mailto:fastsales@gmail.com">mikel.alilaj@gmail.com</a></div>
                     </div>
                 </div>
             </div>

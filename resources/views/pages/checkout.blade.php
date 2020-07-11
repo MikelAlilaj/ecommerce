@@ -123,20 +123,19 @@
 
 
 
-                            <li class="list-group-item">Shiping Charge : <span style="float: right;">${{ $charge  }} </span> </li>
-                            <li class="list-group-item">Vat : <span style="float: right;">${{ $vat }} </span> </li>
-                            @if(Session::has('coupon'))
-                                <li class="list-group-item">Total : <span style="float: right;">${{ Session::get('coupon')['balance'] + $charge + $vat }} </span> </li>
-                            @else
-                                <li class="list-group-item">Total : <span style="float: right;">${{ Cart::Subtotal() + $charge + $vat }} </span> </li>
-                            @endif
+                                <li class="list-group-item">Shiping Charge : <span style="float: right;">${{ $charge  }} </span> </li>
+                                <li class="list-group-item">Vat : <span style="float: right;">${{ $vat }} </span> </li>
+                                @if(Session::has('coupon'))
+                                    <li class="list-group-item">Total : <span style="float: right;">${{ Session::get('coupon')['balance'] + $charge + $vat }} </span> </li>
+                                @else
+                                    <li class="list-group-item">Total : <span style="float: right;">${{ Cart::Subtotal() + $charge + $vat }} </span> </li>
+                                @endif
 
 
                         </ul>
                     </div>
                 </div>
             </div>
-
 
 
 

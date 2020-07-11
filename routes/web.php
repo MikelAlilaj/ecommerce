@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+// Socialite Route
+Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
+Route::get('/callback/{provider}', 'SocialController@callback');
+
 Route::get('/', function () {
     return view('pages.index');
 });
@@ -156,6 +161,7 @@ Route::get('payment/page', 'CartController@PaymentPage')->name('payment.step');
 Route::post('user/payment/process/', 'PaymentController@Payment')->name('payment.process');
 
 Route::post('user/stripe/charge/', 'PaymentController@StripeCharge')->name('stripe.charge');
+Route::post('user/oncash/charge/', 'PaymentController@OnCash')->name('oncash.charge');
 
 // Product details Page
 Route::get('products/{id}', 'ProductController@ProductsView');

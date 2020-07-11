@@ -140,7 +140,6 @@
                                     <label class="custom-file">
                                         <input type="file" id="file" class="custom-file-input" name="image_one" onchange="readURL(this);" required="">
                                         <span class="custom-file-control"></span>
-                                        <br>
                                         <img src="#" id="one">
                                     </label>
 

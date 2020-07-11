@@ -58,7 +58,7 @@
 
 @else
     <!-- ########## START: LEFT PANEL ########## -->
-    <div class="sl-logo"><a href=""><i class="icon ion-android-star-outline"></i> easylearning</a></div>
+    <div class="sl-logo"><a href=""><i class="icon ion-android-star-outline"></i>MikelEcom</a></div>
     <div class="sl-sideleft">
 
 

@@ -179,7 +179,7 @@
 
                                     <div class="wishlist_icon"><img src="{{ asset('frontend/images/heart.png')}}" alt=""></div>
                                     <div class="wishlist_content">
-                                        <div class="wishlist_text"><a href="#">Wishlist</a></div>
+                                        <div class="wishlist_text"><a href="{{ route('user.wishlist') }}">Wishlist</a></div>
                                         <div class="wishlist_count">{{ count($wishlist) }}</div>
                                     </div>
                             </div>
